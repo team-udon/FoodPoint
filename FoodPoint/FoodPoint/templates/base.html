@@ -13,18 +13,20 @@
     {% load static %}
     <nav id="navbar">
         <div class="navbar_logo">
-            <a id="logo" href="#"><img class="navbar_logo" src="{% static 'logo.png' %}"></a>
+            <a id="logo" href="{%url 'home'%}"><img class="navbar_logo" src="{% static 'logo.png' %}"></a>
         </div>
         <ul class="navbar_menu">
-            <li class="navbar_item"><a href="#">푸포란?</a></li>
-            <li class="navbar_item"><a href="#">가게 등록</a></li>
+            <li class="navbar_item"><a href="{%url 'introduce'%}">푸포란?</a></li>
+            <li class="navbar_item"><a href="{%url 'register'%}">가게 등록</a></li>
             <li class="navbar_item"><a href="#">마이페이지</a></li>
-            <li class="navbar_item"><a href="#">로그인</a></li>
+            <li class="navbar_item"><a href="{%url 'signIn'%}">로그인</a></li>
         </ul>
         <div class="navbar_search">
             <span class="search_description">자주가는 가게 찾아보기 :</span>
             <input type="text" class="searchbar" placeholder="Search">
-            <button class="searchBtn">Search</button>
+            <a href="{%url 'search'%}">
+                <button class="searchBtn">Search</button>
+            </a>
         </div>
     </nav>
 

@@ -9,11 +9,11 @@
 {% block content %}
     <div class = "register_container2">
         <div class="img_container2">
-            <img class="logoImg" src="logo.png">
+            <img class="logoImg" src="{% static 'logo.png' %}">
         </div>
         <b><div class="register_title">당신의 QR코드</div></b>
         <div class="qrCode">
-            <img src="http://placehold.it/150x150" alt="잔반 사진을 올려주세요"/>
+            <img src="http://placehold.it/150x150" alt="QR코드"/>
         </div>
         <div class="buttons">
             <button class="codeBtn" id="printCode" disabled>코드 인쇄</button>
