@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>SearchResult</title>
+    <link rel="stylesheet" href="{% static 'searchResult.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <section id="search">
+        <input type="text" class="search_bar">
+    </section>
+    <section id="search_result">
+        <div class="search_result_text">검색 결과 2건</div>
+        <div class="containers">
+            <div class="result_container">
+                <div class="store_description">
+                    <div class="store_title">더 진국 숭실대점</div>
+                    <div class="store_location">주소 : 서울 동작구 상도로61길 38</div>
+                </div>
+                <div class="store_image_container">
+                    <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
+                </div>
+            </div>
+            <div class="result_container">
+                <div class="store_description">
+                    <div class="store_title">The Kone</div>
+                    <div class="store_location">주소 : 서울 동작구 상도로61길 23</div>
+                </div>
+                <div class="store_image_container">
+                    <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'foodpointMain.css' %}">
+    {% block extrahead %}
+    {% endblock %}
+</head>
+<body>
+    {% load static %}
+    <nav id="navbar">
+        <div class="navbar_logo">
+            <a id="logo" href="#"><img class="navbar_logo" src="{% static 'logo.png' %}"></a>
+        </div>
+        <ul class="navbar_menu">
+            <li class="navbar_item"><a href="#">푸포란?</a></li>
+            <li class="navbar_item"><a href="#">가게 등록</a></li>
+            <li class="navbar_item"><a href="#">마이페이지</a></li>
+            <li class="navbar_item"><a href="#">로그인</a></li>
+        </ul>
+        <div class="navbar_search">
+            <span class="search_description">자주가는 가게 찾아보기 :</span>
+            <input type="text" class="searchbar" placeholder="Search">
+            <button class="searchBtn">Search</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

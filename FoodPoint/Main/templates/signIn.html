@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>SignIn</title>
+    <link rel="stylesheet" href="{% static 'signIn.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <div class = "signIn_container">
+        <div class="img_container">
+            <img class="logoImg" src="logo.png">
+        </div>
+        <input type="text" class="signIn" placeholder="휴대폰 번호">
+        <input type="password" class="signIn" placeholder="비밀번호">
+        <button id="confirmBtn" disabled>확인</button>
+    </div>
+{% endblock %}

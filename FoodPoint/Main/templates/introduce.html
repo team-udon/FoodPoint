@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>Introduce</title>
+    <link rel="stylesheet" href="{% static 'introduce.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <!-- Section1 -->
+    <section id="section1">
+        <div id="section1_left">
+            <div class="section1_title">음식물 쓰레기가</div> 
+            <div class="section1_title">환경에 미치는 영향</div>
+            <br>
+            <br>
+            <div class="section1_subtitle">
+                환경부 자료에 따르면,
+            </div>
+            <div class="section1_subtitle">
+                음식물 쓰레기 처리에는
+                <span class="highlight"> 연간 885만 톤</span>의 온실가스가 발생하고,
+            </div>
+            <div class="section1_subtitle">
+                <span class="highlight">연간 20조원</span> 이상의 경제적 손실과
+                <span class="highlight">8천억 원</span>의 처리비용이 발생합니다.</div>
+        </div>
+        <div id="section1_right">
+            <img class="trashImg" src="설명용.png">
+        </div>
+    </section>
+    <!-- Section2 -->
+    <section id="section2">
+        <div id="section2_left">
+            <div class="section2_title">무(無)잔반 포인트 웹 서비스</div> 
+            <b><div class="section2_title">'푸포(Food Point)'</div></b>
+            <br>
+            <br>
+            <div class="section2_subtitle">
+                <span class="highlight">'푸포(Food Point)'</span>는 잔반을 남기지 않을 때
+            </div>
+            <div class="section2_subtitle">
+                소비자들에게 부가적인 이익을 가져다주는 포인트 웹서비스로,
+            </div>
+            <div class="section2_subtitle">
+                음식물 쓰레기의
+                <span class="highlight">약 30%</span>
+                에 해당하는 외식업장에서 발생하는 쓰레기를 줄임으로써
+            </div>
+            <div class="section2_subtitle">
+                온실가스 감소를 할 수 있게 합니다.
+            </div>
+        </div>
+        <div id="section2_right">
+            <img class="logoImg" src="logo.png">
+        </div>
+    </section>
+{% endblock %}

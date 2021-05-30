@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>RegisterStore</title>
+    <link rel="stylesheet" href="{% static 'registerStore.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <div class = "register_container">
+        <div class="img_container">
+            <img class="logoImg" src="logo.png">
+        </div>
+        <input type="text" class="register_store" placeholder="휴대폰 번호">
+        <input type="password" class="register_store" placeholder="비밀번호">
+        <input type="password" class="register_store" placeholder="비밀번호 확인">
+        <input type="text" class="register_store" placeholder="가게 이름">
+        <input type="text" class="register_store" placeholder="가게 주소">
+        <input type="text" class="register_store" placeholder="사업자 등록번호">
+        <button id="confirmBtn" disabled>등록 및 QR코드 생성</button>
+    </div>
+{% endblock %}

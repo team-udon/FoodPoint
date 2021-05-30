@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>PhoneInput</title>
+    <link href="{% static 'phoneInput.css' %}" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+</head>
+{% block content %}
+    <div class = "phoneInput_container">
+        <div class="img_container">
+            <img class="logoImg" src="logo.png">
+        </div>
+        <input type="text" class="phone" placeholder="휴대폰 번호">
+        <button id="confirmBtn" disabled>확인</button>
+    </div>
+{% endblock %}
