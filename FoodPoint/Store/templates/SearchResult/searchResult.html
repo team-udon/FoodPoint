@@ -1,38 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Result</title>
-    <link href="searchResult.css" rel="stylesheet" type="text/css"/>
+    <link href="searchResult.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <section id="search">
         <input type="text" class="search_bar">
     </section>
     <section id="search_result">
         <div class="search_result_text">검색 결과 2건</div>
-        <div class="containers">
-            <div class="result_container">
-                <div class="store_description">
-                    <div class="store_title">더 진국 숭실대점</div>
-                    <div class="store_location">주소 : 서울 동작구 상도로61길 38</div>
-                </div>
-                <div class="store_image_container">
-                    <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
-                </div>
+
+        {% if user.is_authenticated %}
+        <div>
+            {{user.username}}
+        </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <div id="accountsbtn">
+            <button class="btn btn-outline-secondary"><a href="{% url 'logout' %}">로그아웃</a></button>
+        </div>
+        {% endif %}
+        {% if not user.is_authenticated %}
+        <div id="accountsbtn">
+            <button class="btn btn-outline-secondary"><a href="{% url 'login' %}">로그인</a></button>
+        </div>
+        {% endif %}
+
+        {%for store in stores %}
+        <div class="text">
+            {{store.author}} <br>
+            {{store.Store_name}} <br>
+            {{store.Store_tel}}<br>
+            {{store.Store_add}}<br>
+            <a href="{%url 'detail' store.id%}">...more</a>
+        </div>
+
+    </section>
+    </div>
+
+    </div>
+    {% endfor %}
+
+
+
+    <div class="containers">
+        <div class="result_container">
+            <div class="store_description">
+                <div class="store_title">더 진국 숭실대점</div>
+                <div class="store_location">주소 : 서울 동작구 상도로61길 38</div>
             </div>
-            <div class="result_container">
-                <div class="store_description">
-                    <div class="store_title">The Kone</div>
-                    <div class="store_location">주소 : 서울 동작구 상도로61길 23</div>
-                </div>
-                <div class="store_image_container">
-                    <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
-                </div>
+            <div class="store_image_container">
+                <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
             </div>
         </div>
+        <div class="result_container">
+            <div class="store_description">
+                <div class="store_title">The Kone</div>
+                <div class="store_location">주소 : 서울 동작구 상도로61길 23</div>
+            </div>
+            <div class="store_image_container">
+                <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
+            </div>
+        </div>
+    </div>
     </section>
 </body>
+
 </html>

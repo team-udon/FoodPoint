@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodPoint</title>
-    <link href="foodpointMain.css" rel="stylesheet" type="text/css"/>
+    <link href="foodpointMain.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <nav id="navbar">
         <div class="navbar_logo">
@@ -27,27 +29,36 @@
     <!-- Home -->
     <section id="home">
         <div id="home_contain">
-            <div class="home_title1">비울수록 채워지는</div> 
-            <b><div class="home_title2">푸포(Food Point)</div></b>
+            <div class="home_title1">비울수록 채워지는</div>
+            <b>
+                <div class="home_title2">푸포(Food Point)</div>
+            </b>
             <div class="home_subtitle">
                 <span class="highlight">잔반을 남기지 않을 때</span>
-                마다 알뜰살뜰 
-                <span class="highlight">포인트를 적립</span>하고,</div>
+                마다 알뜰살뜰
+                <span class="highlight">포인트를 적립</span>하고,
+            </div>
             <div class="home_subtitle">
-                <span class="highlight">제휴된 음식점에서</span> 
-                내맘대로 
-                <span class="highlight">포인트를 사용</span>하고,</div>
+                <span class="highlight">제휴된 음식점에서</span>
+                내맘대로
+                <span class="highlight">포인트를 사용</span>하고,
+            </div>
             <div class="home_subtitle">
-                <span class="highlight">음식물 쓰레기 절감</span>으로 인한 
-                <span class="highlight">온실가스 배출감소</span>에 기여하는 
-                <span class="green_highlight">친환경 서비스</span>입니다.</div>
+                <span class="highlight">음식물 쓰레기 절감</span>으로 인한
+                <span class="highlight">온실가스 배출감소</span>에 기여하는
+                <span class="green_highlight">친환경 서비스</span>입니다.
+            </div>
         </div>
     </section>
     <!-- E-mail -->
     <section id="email">
         <div class="email_container">
-            <b><div class="email_title">자주 방문하는 가게에 '푸포'를 알리고</div> </b>
-            <b><div class="email_title">환경 보호에 기여하세요!</div> </b>
+            <b>
+                <div class="email_title">자주 방문하는 가게에 '푸포'를 알리고</div>
+            </b>
+            <b>
+                <div class="email_title">환경 보호에 기여하세요!</div>
+            </b>
             <div class="email_input">
                 <input type="text" class="email_textfield" placeholder="Your email here">
                 <button class="subscribeBtn">Subscribe</button>
@@ -69,5 +80,19 @@
     </section>
 
     {{user.username}}
+    {% if user.is_authenticated %}
+    <div id="accountsbtn">
+        <button class="btn btn-outline-secondary"><a href="{% url 'logout' %}">로그아웃</a></button>
+    </div>
+    <!-- <div>
+        <button class="btn btn-outline-secondary"><a href="{% url 'logout' %}">로그아웃</a></button>
+    </div> -->
+    {% endif %}
+    {% if not user.is_authenticated %}
+    <div id="accountsbtn">
+        <button class="btn btn-outline-secondary"><a href="{% url 'login' %}">로그인</a></button>
+    </div>
+    {% endif %}
 </body>
+
 </html>

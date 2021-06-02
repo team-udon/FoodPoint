@@ -8,7 +8,7 @@ class Store( models.Model):
     Store_tel = models.TextField() 
     Store_add = models.TextField() 
     Store_num = models.TextField() 
-    # author= models.ForeignKey(User, related_name='store', on_delete =models.CASCADE)
+    # Store_author= models.ForeignKey(User, related_name='stores', on_delete =models.CASCADE)
 
     def __str__(self):
         return "가게 : " + self.Store_name

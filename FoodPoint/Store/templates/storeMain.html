@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{store.Store_name}} <br>
+    {{store.Store_tel}} <br>
+    {{store.Store_add}} <br>
+    {{store.Store_num}} <br>
+    {% if user.name == store.author %}
+        <div id="accountsbtn">
+            <button class="btn btn-outline-secondary"><a href="{% url 'edit' store.id %}">수정하기</a></button>
+            <button class="btn btn-outline-secondary"><a href="{% url 'delete' store.id %}">삭제하기</a></button>
+        </div>
+        {% endif %}
+</body>
+</html>

@@ -29,4 +29,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('store/new', new, name='new'),
     path('store/create', create, name='create'),
+    path('store/delete/<int:Store_id>', delete, name='delete'),
+    path('store/edit/<int:Store_id>', edit, name='edit'),
+    path('store/update/<int:Store_id>', update, name='update'),
+    path('store/storeList', storeList, name='storeList'),
+    path('store/detail/<int:Store_id>', detail, name='detail'),
 ]
