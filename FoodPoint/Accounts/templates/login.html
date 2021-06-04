@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html'%}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    {% load static %}
+    {% block extrahead %}
+    <title>LogIn</title>
+    <link rel="stylesheet" href="{% static 'signIn.css' %}">
+    {% endblock %}
 </head>
 
-<body>
+{% block content %}
+    <div class = "signIn_container">
+        <div class="img_container">
+            <img class="logoImg" src="{% static 'logo.png' %}">
+        </div>
     <form method ="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        <input name="username" type="text" class="userLogin" placeholder="전화번호, 사용자 이름 또는 이메일 " value="">
-        <input name="password" type="password" class="userLogin" placeholder="비밀번호" value="">
-        <input id="loginButton" class="btn btn-primary" type="submit" value="로그인">
+        <input name="username" type="text" class="signIn" placeholder="전화번호, 사용자 이름 또는 이메일 " value="">
+        <input name="password" type="password" class="signIn" placeholder="비밀번호" value="">
+        <input id="confirmBtn" class="btn btn-primary" type="submit" value="로그인">
     </form>
-</body>
-</html>
+</div>
+{% endblock %}
