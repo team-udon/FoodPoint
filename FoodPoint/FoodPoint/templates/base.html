@@ -19,7 +19,13 @@
             <li class="navbar_item"><a href="{%url 'introduce'%}">푸포란?</a></li>
             <li class="navbar_item"><a href="{%url 'register'%}">가게 등록</a></li>
             <li class="navbar_item"><a href="#">마이페이지</a></li>
-            <li class="navbar_item"><a href="{%url 'signIn'%}">로그인</a></li>
+            <li class="navbar_item"><a href="{%url 'signIn'%}">회원가입</a></li>
+    {% if user.is_authenticated %}
+            <li class="navbar_item"><a href="{% url 'logout' %}">로그아웃</a></li>
+    {% endif %}
+    {% if not user.is_authenticated %}
+            <li class="navbar_item"><a href="{% url 'login' %}">로그인</a></li>
+    {% endif %}
         </ul>
         <div class="navbar_search">
             <span class="search_description">자주가는 가게 찾아보기 :</span>

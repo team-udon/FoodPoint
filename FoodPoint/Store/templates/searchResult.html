@@ -11,36 +11,22 @@
         <input type="text" class="search_bar">
     </section>
 
-    {% if user.is_authenticated %}
-        <div>
-            {{user.username}}
-        </div>
-    {% endif %}
-
-    {% if user.is_authenticated %}
-        <div id="accountsbtn">
-            <button class="btn btn-outline-secondary"><a href="{% url 'logout' %}">로그아웃</a></button>
-        </div>
-    {% endif %}
-    {% if not user.is_authenticated %}
-        <div id="accountsbtn">
-            <button class="btn btn-outline-secondary"><a href="{% url 'login' %}">로그인</a></button>
-        </div>
-    {% endif %}
-
-    {%for store in stores %}
-        <div class="text">
-            {{store.Store_author}} <br>
-            {{store.Store_name}} <br>
-            {{store.Store_tel}}<br>
-            {{store.Store_add}}<br>
-            <a href="{% url 'detail' store.id %}">...more</a>
-        </div>
-    {% endfor %}
-
     <section id="search_result">
-        <div class="search_result_text">검색 결과 2건</div>
+        <div class="search_result_text"></div>
         <div class="containers">
+            {%for store in stores %}
+            <div class="result_container">
+                <div class="store_description">
+                    <div class="store_title">{{store.Store_name}}</div>
+                    <div class="store_location">주소 : {{store.Store_add}}</div>
+                    <div class="store_phone">연락처 : {{store.Store_tel}}</div>
+                    <a class="store_detail" href="{% url 'detail' store.id %}">...more</a>
+                </div>
+                <div class="store_image_container">
+                    <img src="http://placehold.it/150x150" alt="매장사진" class="storeImg">
+                </div>
+            </div>
+            {% endfor %}
             <div class="result_container">
                 <div class="store_description">
                     <div class="store_title">더 진국 숭실대점</div>
