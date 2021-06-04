@@ -1,0 +1,77 @@
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: lightgrey;
+  --color-green: green;
+  --color-light-green: #a9d18e;
+  --color-black: #000000;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+
+  /* Font size */
+  --font-extralarge: 48px;
+  --font-large: 36px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-micro: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-white);
+  height: 100vh;
+}
+
+/* Phone Section */
+.usePoint_container {
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 480px;
+  height: 350px;
+  background-color: var(--color-white);
+  text-align: center;
+  border: 2px solid var(--color-light-green);
+  border-radius: 30px;
+}
+
+.image_logo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.logoImg {
+  width: 70px;
+  height: 70px;
+}
+
+.usePoint {
+  width: 50%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark-white);
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: var(--font-micro);
+}
+
+#showBtn {
+  margin-top: 10px;
+  width: 54%;
+  color: var(--color-white);
+  background-color: var(--color-light-green);
+  padding: 6px;
+  border: none;
+  border-radius: 3px;
+}
+
+.greenPaint {
+  color: green;
+  font-size: var(--font-large);
+  margin-left: 10px;
+  margin-right: 10px;
+}

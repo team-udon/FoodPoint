@@ -1,0 +1,128 @@
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: lightgrey;
+  --color-green: green;
+  --color-light-green: #a9d18e;
+  --color-black: #000000;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+
+  /* Font size */
+  --font-large: 36px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-micro: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-white);
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-right: 70px;
+}
+
+/* Register Container */
+
+.register_container {
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 280px;
+  height: 450px;
+  background-color: var(--color-white);
+  text-align: center;
+  border: 2px solid var(--color-light-green);
+  border-radius: 30px;
+}
+
+.register_container2 {
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 280px;
+  height: 400px;
+  background-color: var(--color-white);
+  text-align: center;
+  border: 2px solid var(--color-light-green);
+  border-radius: 30px;
+}
+
+.img_container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.img_container2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.logoImg {
+  width: 70px;
+  height: 70px;
+}
+
+.register_store {
+  width: 70%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark-white);
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: var(--font-micro);
+}
+
+#confirmBtn {
+  margin-top: 10px;
+  width: 78%;
+  color: var(--color-white);
+  background-color: var(--color-light-green);
+  padding: 6px;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Result */
+
+.register_title {
+  font-size: var(--font-regular);
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.codeBtn {
+  margin-top: 30px;
+  width: 30%;
+  color: var(--color-white);
+  background-color: var(--color-light-green);
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+}
+
+#printCode {
+  margin-right: 5px;
+}
+
+#saveCode {
+  margin-left: 5px;
+}
