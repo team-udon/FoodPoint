@@ -6,8 +6,24 @@
     <link href="{% static 'storeMain.css' %}" rel="stylesheet" type="text/css"/>
     {% endblock %}
 </head>
+    
 
 {% block content %}
+
+{{store.Store_name}} <br>
+{{store.Store_tel}} <br>
+{{store.Store_add}} <br>
+{{store.Store_num}} <br>
+
+<div id="accountsbtn">
+    <button class="btn btn-outline-secondary"><a href="{% url 'edit' store.id %}">수정하기</a></button>
+    <button class="btn btn-outline-secondary"><a href="{% url 'delete' store.id %}">삭제하기</a></button>
+</div>
+
+{% if store.Store_author == user.name%}
+
+{% endif %}
+
     <div class="main_container">
         <div class='image_logo'>
             <img class="logoImg" src='./logo.png' alt='logo'>
