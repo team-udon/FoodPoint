@@ -9,9 +9,9 @@ def signup(request):
     if request.method == 'POST':
         user = User.objects.create_user(username=request.POST.get('username'), password=request.POST.get('password'))
         auth.login(request, user)
-        return render(request, 'FoodpointMain/foodpointMain.html')
+        return render(request, 'foodpointMain.html')
     else:
-        return render(request, 'Signin/signin.html')
+        return render(request, 'signin.html')
 
 def login(request):
     if request.method == 'POST':
@@ -23,10 +23,10 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'Signin/login.html', {'error' : 'username or password is incorrect. '})
+            return render(request, 'login.html', {'error' : 'username or password is incorrect. '})
 
     else:
-        return render(request, 'Signin/login.html')
+        return render(request, 'login.html')
 
 
 def logout(request):

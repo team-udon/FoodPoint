@@ -1,21 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html'%}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    {% block extrahead %}
+    <title>StoreMain</title>
+    <link href="{% static 'storeMain.css' %}" rel="stylesheet" type="text/css"/>
+    {% endblock %}
 </head>
-<body>
-    {{store.Store_name}} <br>
-    {{store.Store_tel}} <br>
-    {{store.Store_add}} <br>
-    {{store.Store_num}} <br>
-    {% if user.name == store.author %}
-        <div id="accountsbtn">
-            <button class="btn btn-outline-secondary"><a href="{% url 'edit' store.id %}">수정하기</a></button>
-            <button class="btn btn-outline-secondary"><a href="{% url 'delete' store.id %}">삭제하기</a></button>
+    
+
+{% block content %}
+
+{{store.Store_name}} <br>
+{{store.Store_tel}} <br>
+{{store.Store_add}} <br>
+{{store.Store_num}} <br>
+
+<div id="accountsbtn">
+    <button class="btn btn-outline-secondary"><a href="{% url 'edit' store.id %}">수정하기</a></button>
+    <button class="btn btn-outline-secondary"><a href="{% url 'delete' store.id %}">삭제하기</a></button>
+</div>
+
+{% if store.Store_author == user.name%}
+
+{% endif %}
+
+    <div class="main_container">
+        <div class='image_logo'>
+            <img class="logoImg" src='./logo.png' alt='logo'>
         </div>
-        {% endif %}
-</body>
-</html>
+        <div class="main_text0">
+            <h2>더 진국 숭실대점</h2>
+            <div class="icons">
+                <div>
+                    <img class="icon_img1" src="image.png">
+                </div>
+                <div>
+                    <img class="icon_img2" src="image2.png">
+                </div>
+                <div>
+                    <img class="icon_img3" src="image3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

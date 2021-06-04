@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>RegisterStore</title>
+    <link rel="stylesheet" href="{% static 'registerStore.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <div class = "register_container">
+        <div class="img_container">
+            <img class="logoImg" src="{% static 'logo.png' %}">
+        </div>
+        {{user.username}}
+        <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <input type="text" class="register_store" placeholder="가게 이름">
+            <input type="text" class="register_store" placeholder="가게 연락처">
+            <input type="text" class="register_store" placeholder="가게 주소">
+            <input type="text" class="register_store" placeholder="사업자 등록번호">
+            <button type="submit" id="confirmBtn">등록</button>
+        </form>
+    </div>
+{% endblock %}

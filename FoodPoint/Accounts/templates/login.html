@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>LogIn</title>
+    <link rel="stylesheet" href="{% static 'signIn.css' %}">
+    {% endblock %}
+</head>
+
+{% block content %}
+    <div class = "signIn_container">
+        <div class="img_container">
+            <img class="logoImg" src="{% static 'logo.png' %}">
+        </div>
+    <form method ="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input name="username" type="text" class="signIn" placeholder="전화번호, 사용자 이름 또는 이메일 " value="">
+        <input name="password" type="password" class="signIn" placeholder="비밀번호" value="">
+        <input id="confirmBtn" class="btn btn-primary" type="submit" value="로그인">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <title>RegisterStore</title>
+    <link rel="stylesheet" href="{% static 'registerStore.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+    <div class = "register_container2">
+        <div class="img_container2">
+            <img class="logoImg" src="{% static 'logo.png' %}">
+        </div>
+        <b><div class="register_title">당신의 QR코드</div></b>
+        <div class="qrCode">
+            <img src="http://placehold.it/150x150" alt="QR코드"/>
+        </div>
+        <div class="buttons">
+            <button class="codeBtn" id="printCode" disabled>코드 인쇄</button>
+            <button class="codeBtn" id="saveCode" disabled>코드 저장</button>
+        </div>
+    </div>
+{% endblock %}
