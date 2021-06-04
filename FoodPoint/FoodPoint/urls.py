@@ -15,7 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Accounts.views import *
+from Main.views import *
+from Store.views import *
+from django.conf import settings 
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/signup/', signup, name="signup"),
+    path('accounts/login/', login, name="login"),
+    path('accounts/logout', logout, name='logout'),
+    path('', home, name='home'),
+    path('store/new', new, name='new'),
+    path('store/create', create, name='create'),
+    path('store/delete/<int:Store_id>', delete, name='delete'),
+    path('store/edit/<int:Store_id>', edit, name='edit'),
+    path('store/update/<int:Store_id>', update, name='update'),
+    path('store/storeList', storeList, name='storeList'),
+    path('store/detail/<int:Store_id>', detail, name='detail'),
 ]
