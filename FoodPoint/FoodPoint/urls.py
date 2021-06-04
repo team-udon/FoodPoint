@@ -31,7 +31,7 @@ urlpatterns = [
     path('register/', register, name="register"),
     path('search/', search, name="search"),
     path('User/getPoint', getPoint, name="getpoint"),
-
+    path('User/photoUpload', photoUpload, name="photoUpload"),
     path('accounts/signup/', signup, name="signup"),
     path('accounts/login/', login, name="login"),
     path('accounts/logout', logout, name='logout'),
@@ -43,4 +43,4 @@ urlpatterns = [
     path('store/storeList', storeList, name='storeList'),
     path('store/detail/<int:Store_id>', detail, name='detail'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

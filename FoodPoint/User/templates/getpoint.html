@@ -16,10 +16,18 @@
             <img class="restImg" src='empty.JPG' alt="잔반 사진을 올려주세요"/>
         </div>
         <div class="buttons">
-            <button class="gpBtn" id="selectImg" disabled>
-                <img src="cameraicon.png">
-            </button>
-            <button class="gpBtn" id="confirmBtn" disabled>승인 요청</button>
+            <form action="{%url 'photoUpload'%}" method="POST" enctype="multipart/form-data">
+
+                <button class="gpBtn" id="selectImg" disabled>
+                    <img src="cameraicon.png">
+
+                    {% csrf_token %}
+                    <input type="file" name="image">
+
+                </button>
+                <button type="submit" class="gpBtn" id="confirmBtn">승인 요청</button>
+            </form>
+
         </div>
     </div>
 {% endblock %}

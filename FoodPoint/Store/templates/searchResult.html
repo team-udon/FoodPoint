@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'searchResult.css' %}">
     {% endblock %}
 </head>
+
 {% block content %}
     <section id="search">
         <input type="text" class="search_bar">
@@ -19,12 +20,12 @@
 
     {% if user.is_authenticated %}
         <div id="accountsbtn">
-            <button class="btn btn-outline-secondary"><a href="{% url 'logout' %}">로그아웃</a></button>
+            <button><a href="{% url 'logout' %}">로그아웃</a></button>
         </div>
     {% endif %}
     {% if not user.is_authenticated %}
         <div id="accountsbtn">
-            <button class="btn btn-outline-secondary"><a href="{% url 'login' %}">로그인</a></button>
+            <button><a href="{% url 'login' %}">로그인</a></button>
         </div>
     {% endif %}
 

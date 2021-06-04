@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
+{% extends 'base.html'%}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% block extrahead %}
     <title>RegisterStore</title>
-    <link href="registerStore.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'registerStore.css' %}">
+    {% endblock %}
 </head>
-
-<body>
+{% block content %}
     <div class="register_container">
         <div class="img_container">
             <img class="logoImg" src="logo.png">
@@ -24,6 +21,4 @@
             <button type="submit" id="confirmBtn">등록</button>
         </form>
     </div>
-</body>
-
-</html>
+{% endblock %}
